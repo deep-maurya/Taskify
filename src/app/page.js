@@ -3,8 +3,8 @@ import Kanbanboard from '@/component/Kanbanboard';
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <div className="container mx-auto px-4">
+    <main className="min-h-screen flex  justify-center">
+      <div className="w-full max-w-6xl pt-10">
         <Kanbanboard />
       </div>
     </main>

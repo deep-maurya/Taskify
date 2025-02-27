@@ -1,7 +1,7 @@
 'use client';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { addColumn, deleteColumn } from '../redux/kanbanSlice';
+import { addColumn, addTask, deleteColumn } from '../redux/kanbanSlice';
 
 const useKanban = () => {
   const dispatch = useDispatch();
@@ -11,6 +11,10 @@ const useKanban = () => {
   const createColumn = () => {
     if (!columnName.trim()) return;
     dispatch(addColumn(columnName));
+  };
+
+  const taskAdd = (columnId, taskName) => {
+    dispatch(addTask({ columnId, taskName }));
   };
 
   const removeColumn = (id) => {
@@ -23,6 +27,7 @@ const useKanban = () => {
     setColumnName,
     createColumn,
     removeColumn,
+    taskAdd,
   };
 };
 
