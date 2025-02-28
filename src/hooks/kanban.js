@@ -13,8 +13,8 @@ const useKanban = () => {
     dispatch(addColumn(columnName));
   };
 
-  const taskAdd = (columnId, taskName) => {
-    dispatch(addTask({ columnId, taskName }));
+  const taskAdd = (columnId, title, description, priority) => {
+    dispatch(addTask({ columnId, title, description, priority }));
   };
 
   const removeColumn = (id) => {

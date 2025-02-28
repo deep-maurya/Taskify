@@ -42,7 +42,10 @@ const AlwaysOpenModal = ({ type = 'addColumn' }) => {
                 </button>
                 <button
                   type="button"
-                  onClick={createColumn}
+                  onClick={() => {
+                    createColumn();
+                    closeModal();
+                  }}
                   className="text-white bg-neutral-900 hover:bg-neutral-800 font-bold rounded-lg text-sm px-5 py-2.5"
                 >
                   Submit

@@ -4,14 +4,29 @@ import useKanban from '../hooks/kanban';
 import useModal from '../hooks/modal';
 
 const AddTask = ({ type = 'addTask' }) => {
-  const { createColumn } = useKanban();
-  const { isOpen, closeModal } = useModal();
+  const { taskAdd } = useKanban();
+  const { isOpen, closeModal, modalData } = useModal();
 
   const [taskTitle, setTaskTitle] = useState('');
   const [priority, setPriority] = useState('Medium');
   const [description, setDescription] = useState('');
 
   if (!isOpen(type)) return null;
+
+  const handleAddTask = () => {
+    if (!taskTitle.trim()) {
+      alert('Task title is required');
+      return;
+    }
+
+    taskAdd(modalData.columnId, taskTitle, description, priority);
+    closeModal();
+
+    setTaskTitle('');
+    setDescription('');
+    setPriority('Medium');
+  };
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-neutral-700 bg-opacity-50">
       <div className="relative p-6 w-full max-w-md bg-white rounded-lg shadow-lg">
@@ -25,7 +40,7 @@ const AddTask = ({ type = 'addTask' }) => {
           </button>
         </div>
         <div className="py-4">
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-900">
                 Task Title
@@ -75,7 +90,7 @@ const AddTask = ({ type = 'addTask' }) => {
               </button>
               <button
                 type="button"
-                onClick={createColumn}
+                onClick={handleAddTask}
                 className="text-white bg-neutral-900 hover:bg-neutral-800 font-bold rounded-lg text-sm px-5 py-2.5"
               >
                 Submit

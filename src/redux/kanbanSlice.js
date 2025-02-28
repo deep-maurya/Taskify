@@ -21,10 +21,15 @@ const kanbanSlice = createSlice({
     },
 
     addTask: (state, action) => {
-      const { columnId, taskName } = action.payload;
+      const { columnId, title, description, priority } = action.payload;
       const column = state.columns.find((col) => col.id === columnId);
       if (column) {
-        column.tasks.push(taskName);
+        column.tasks.push({
+          id: Date.now(),
+          title,
+          description,
+          priority,
+        });
       }
     },
 

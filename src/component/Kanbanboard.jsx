@@ -53,20 +53,23 @@ const Kanbanboard = () => {
                   </button>
                   <button
                     className="p-2 hover:bg-neutral-700 rounded-md"
-                    onClick={() => openModal('addTask')}
+                    onClick={() =>
+                      openModal('addTask', { columnId: column.id })
+                    }
                   >
                     <AddIcon className="h-5 w-5" />
                   </button>
                 </div>
               </div>
               <div className="flex-grow flex flex-col gap-2 overflow-auto py-4 border-neutral-700">
+                {console.log(column.tasks)}
                 {column.tasks && column.tasks.length > 0 ? (
                   column.tasks.map((task, index) => (
                     <div
                       key={index}
                       className="bg-neutral-800 text-white p-2 rounded-md border border-neutral-700"
                     >
-                      {task}
+                      {task.title}
                     </div>
                   ))
                 ) : (
