@@ -11,6 +11,7 @@ const useKanban = () => {
   const createColumn = () => {
     if (!columnName.trim()) return;
     dispatch(addColumn(columnName));
+    setColumnName('');
   };
 
   const taskAdd = (columnId, title, description, priority) => {

@@ -1,7 +1,90 @@
 import { createSlice } from '@reduxjs/toolkit';
+const initialColumns = [
+  {
+    id: 1,
+    title: 'To Do',
+    tasks: [
+      {
+        title: 'Fix login bug',
+        tags: ['Bug', 'Test'],
+        assignee: 'John',
+        priority: 'High',
+      },
+      {
+        title: 'Design homepage',
+        tags: ['UI'],
+        assignee: 'Alice',
+        priority: 'Medium',
+      },
+      {
+        title: 'Fix login bug',
+        tags: ['Bug'],
+        assignee: 'John',
+        priority: 'High',
+      },
+      {
+        title: 'Design homepage',
+        tags: ['UI'],
+        assignee: 'Alice',
+        priority: 'Medium',
+      },
+      {
+        title: 'Fix login bug',
+        tags: ['Bug'],
+        assignee: 'John',
+        priority: 'High',
+      },
+      {
+        title: 'Design homepage',
+        tags: ['UI'],
+        assignee: 'Alice',
+        priority: 'Medium',
+      },
+      {
+        title: 'Fix login bug',
+        tags: ['Bug'],
+        assignee: 'John',
+        priority: 'High',
+      },
+      {
+        title: 'Design homepage',
+        tags: ['UI'],
+        assignee: 'Alice',
+        priority: 'Medium',
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: 'In Progress',
+    tasks: [
+      {
+        title: 'Develop API',
+        tags: ['Backend'],
+        assignee: 'Sarah',
+        priority: 'Urgent',
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: 'Review',
+    tasks: [
+      {
+        title: 'Test user signup',
+        tags: ['Testing'],
+        assignee: 'Mike',
+        priority: 'Low',
+      },
+    ],
+  },
+  { id: 4, title: 'Done', tasks: [] },
+  { id: 5, title: 'Blocked', tasks: [] },
+  { id: 6, title: 'Backlog', tasks: [] },
+];
 
 const initialState = {
-  columns: [],
+  columns: initialColumns,
 };
 
 const kanbanSlice = createSlice({

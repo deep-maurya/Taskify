@@ -4,8 +4,8 @@ const NoTaskBAnner = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="500"
-      height="200"
+      width="100px"
+      height="auto"
       viewBox="0 0 704.36225 635"
       role="img"
     >

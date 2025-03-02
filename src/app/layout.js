@@ -1,16 +1,23 @@
-import localFont from 'next/font/local';
 import './globals.css';
 import Providers from './providers';
+import localFont from 'next/font/local';
+import { Sora } from 'next/font/google';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
   weight: '100 900',
 });
+
 const geistMono = localFont({
   src: './fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
   weight: '100 900',
+});
+
+export const sora = Sora({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
 });
 
 export const metadata = {
@@ -22,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-black antialiased `}
+        className={`${geistSans.variable} ${geistMono.variable} ${sora.className} antialiased `}
       >
         <Providers>{children}</Providers>
       </body>
