@@ -10,7 +10,7 @@ const AlwaysOpenModal = ({ type = 'addColumn' }) => {
   if (!isOpen(type)) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[100] min-h-screen">
+    <div className="fixed inset-0 w-full flex items-center justify-center bg-black bg-opacity-50 z-[100] h-full">
       <div className="bg-white shadow-xl w-full max-w-md p-6 rounded-xl relative">
         {/* Header */}
         <div className="flex items-center justify-between border-b pb-3">

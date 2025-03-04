@@ -5,5 +5,11 @@ import AlwaysOpenModal from '../component/Modal';
 import CreateTaskModal from '@/component/CreateTaskModal';
 
 export default function Providers({ children }) {
-  return <Provider store={store}>{children}</Provider>;
+  return (
+    <Provider store={store}>
+      <AlwaysOpenModal />
+      <CreateTaskModal />
+      {children}
+    </Provider>
+  );
 }
