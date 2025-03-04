@@ -1,4 +1,6 @@
 'use client';
+import CreateTaskModal from '@/component/CreateTaskModal';
+import AlwaysOpenModal from '@/component/Modal';
 import useKanban from '@/hooks/kanban';
 import useModal from '@/hooks/modal';
 import NoTaskBAnner from '@/icons/NoTaskBAnner';
@@ -27,6 +29,8 @@ export default function AdminPanel() {
 
   return (
     <>
+      <AlwaysOpenModal />
+      <CreateTaskModal />
       <div className="h-screen flex overflow-visible bg-gray-50">
         <aside className="w-72 bg-white border-r border-gray-200 p-6 flex flex-col shadow-lg fixed left-0 top-0 h-full z-20">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">

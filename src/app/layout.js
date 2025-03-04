@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${sora.className} antialiased `}
+        className={`${geistSans.variable} ${geistMono.variable} ${sora.className}  `}
       >
         <Providers>{children}</Providers>
       </body>
